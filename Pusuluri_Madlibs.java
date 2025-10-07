@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Pusuluri_Madlib
+public class Pusuluri_Madlibs
 {
     public static void main(String[] args)
     {
