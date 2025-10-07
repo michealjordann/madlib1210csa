@@ -4,17 +4,25 @@ public class Pusuluri_Madlib
 {
     public static void main(String[] args)
     {
+        // setup
+        String sentence = "I went to the zoo to see a <noun>. There were people <verb> around the enclosure which made the <adjective> apes go bananas.";
+        System.out.println(sentence);
         Scanner sc = new Scanner(System.in);
-        // Get user madlib
-        System.out.println("Type in a madlib, and use parenthesis when a singular/plural noun, verb, adjective, or number is needed. Ex: (noun)");
-        String sentence = sc.nextLine();
+        
+        // get replacements
+        System.out.println("Type in your noun to replace <noun>.");
+        String noun = sc.nextLine();
+        System.out.println("Type in your verb to replace <verb>.");
+        String verb = sc.nextLine();
+        System.out.println("Type in your adjective to replace <adjective>.");
+        String adj = sc.nextLine();
 
-        //user inputted adjs, verbs, etc
-            //use scanner yk how to do this bro 
-            
-        //Parsing algorithm
-            //take index of where user specifies replacement is needed using the string method for it i forgot and then use substring method to take where it is and replace method to replace with user inputted verb
+        // parse
+        sentence = sentence.replace("<noun>", noun);
+        sentence = sentence.replace("<verb>", verb);
+        sentence = sentence.replace("<adjective>", adj);
+        System.out.println("Your new sentence: " + sentence);
 
-
+        sc.close();
     }
 }
