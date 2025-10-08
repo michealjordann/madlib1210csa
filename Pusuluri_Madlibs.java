@@ -17,12 +17,13 @@ public class Pusuluri_Madlib
         System.out.println("Type in your adjective to replace <adjective>.");
         String adj = sc.nextLine();
 
-        // parse with replace method
+        // parse and replace with replace method
         sentence = sentence.replace("<noun>", noun);
         sentence = sentence.replace("<verb>", verb);
         sentence = sentence.replace("<adjective>", adj);
         System.out.println("Your new sentence: " + sentence);
 
+        // close scanner
         sc.close();
     }
 }
