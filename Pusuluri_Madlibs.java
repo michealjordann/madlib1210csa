@@ -1,15 +1,13 @@
 import java.util.Scanner;
 
-public class Pusuluri_Madlib
-{
-    public static void main(String[] args)
-    {
-        // setup, initialize scanner
-        String sentence = "I went to a <noun> to see <plural noun>. I <adjective> started to <verb> after the clock struck <int>";
+public class Pusuluri_Madlib {
+    public static void main(String[] args) {
+
+        String sentence = "I went to a <noun> to see <plural noun>. I <adjective> started to <verb> after I got a call from my <noun>";
         System.out.println(sentence);
         Scanner sc = new Scanner(System.in);
-        
-        // get replacements using scanner
+
+        // user input with scanner
         System.out.println("Type in your noun to replace <noun>.");
         String noun = sc.nextLine();
         System.out.println("Type in your plural noun to replace <plural noun>.");
@@ -18,20 +16,27 @@ public class Pusuluri_Madlib
         String adj = sc.nextLine();
         System.out.println("Type in your verb to replace <verb>.");
         String verb = sc.nextLine();
-        System.out.println("Type in your integer to replace <int>.");
-        int eger = sc.nextInt();
+        System.out.println("Type in your noun to replace the second <noun>.");
+        String noun2 = sc.nextLine();
 
-        // parse and replace with replace method
-        sentence = sentence.replace("<noun>", noun);
-        sentence = sentence.replace("<plural noun>", pnoun);
-        sentence = sentence.replace("<adjective>", adj);
-        sentence = sentence.replace("<verb>", verb);
-        // Users integer needs special treatment
-        int intdex = sentence.indexOf("<int>");
-        sentence = sentence.substring(0, intdex);
-        System.out.println(sentence + eger);
+        // parse and replace
+        int start = sentence.indexOf("<noun>");
+        int end = start + "<noun>".length();
+        sentence = sentence.substring(0, start) + noun + sentence.substring(end);
+        start = sentence.indexOf("<plural noun>");
+        end = start + "<plural noun>".length();
+        sentence = sentence.substring(0, start) + pnoun + sentence.substring(end);
+        start = sentence.indexOf("<adjective>");
+        end = start + "<adjective>".length();
+        sentence = sentence.substring(0, start) + adj + sentence.substring(end);
+        start = sentence.indexOf("<verb>");
+        end = start + "<verb>".length();
+        sentence = sentence.substring(0, start) + verb + sentence.substring(end);
+        start = sentence.indexOf("<noun>");
+        end = start + "<noun>".length();
+        sentence = sentence.substring(0, start) + noun2 + sentence.substring(end);
 
-        // close scanner
+        System.out.println(sentence);
         sc.close();
     }
 }
