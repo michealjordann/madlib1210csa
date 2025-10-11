@@ -4,5 +4,5 @@ My approach in this project was to do as much as I could with the help of the PL
 
 ## Functionality 
 
-![Uploading image.png…]()
+<img width="1173" height="277" alt="image" src="https://github.com/user-attachments/assets/978437fd-f5d3-46b2-a9bf-1a3cf7170594" />
 
